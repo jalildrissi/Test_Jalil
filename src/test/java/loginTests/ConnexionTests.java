@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import base.BaseTests;
 import jpetstorePages.LoginPage;
+import jpetstorePages.MonCompte;
 
 public class ConnexionTests extends BaseTests {
 	
@@ -23,7 +24,9 @@ public class ConnexionTests extends BaseTests {
 		System.out.println("Saisi du mot de passe ");
 		loginpage.SaisirPassord("j2ee");
 		loginpage.cliquerlogin();
-		//MonCompte moncompte = loginpage.cliquerlogin();
+		MonCompte maPage = loginpage.cliquerlogin();
+		String texte = maPage.getTextBienvenu();
+		System.out.println(texte);
 		
 	}
 
