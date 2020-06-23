@@ -4,9 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.*;
 
 public class MonCompte {
-
 	WebDriver driver;
-	
+
 	public MonCompte (WebDriver driver) {
 		this.driver = driver;
 	}
@@ -20,7 +19,7 @@ public class MonCompte {
 		return textBienvenue;
 	}
 	
-	public PageAccueil quitterCompte () {
+	public PageAccueil quitterCompte (	WebDriver driver) {
 		driver.findElement(quitterMonCompte).click();
 		
 		return new PageAccueil (driver);	
