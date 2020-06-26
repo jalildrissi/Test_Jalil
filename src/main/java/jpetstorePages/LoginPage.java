@@ -1,35 +1,39 @@
 package jpetstorePages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 	
-	WebDriver driver;
-	String username;
-	String password;
-	WebElement champ_username = driver.findElement(By.xpath("//input[@name='username']"));
-	WebElement champ_password = driver.findElement(By.xpath("//input[@name='username']"));
-	WebElement bouton_login = driver.findElement(By.xpath("//input[@id='login']"));
 	
-	// geter and seter 
-	public LoginPage (WebDriver driver) {
-		this.driver = driver;
-	}
+	@FindBy(xpath = "//input[@name='username']")
+	private WebElement champ_username;
 	
-
-
-	// Saisir le nom d'utilisateur et le mdp
+	@FindBy(xpath = "//input[@name='password']")
+	private WebElement champ_password;
 	
-	public void saisirUsername(String user_name) {
-		champ_username.sendKeys(user_name);
-	}
+	@FindBy(xpath = "//input[@id='login']")
+	private WebElement bouton_login;
 	
-	public void saisirPassword (String password) {
+	//WebElement champ_username = driver.findElement(By.xpath("//input[@name='username']"));
+	//WebElement champ_password = driver.findElement(By.xpath("//input[@name='username']"));
+	//WebElement bouton_login = driver.findElement(By.xpath("//input[@id='login']"));
+	
+	public MonCompte logIn (WebDriver driver, String username, String password) {
+		
+		champ_username.clear();
+		champ_username.sendKeys(username);
+		champ_password.clear();
 		champ_password.sendKeys(password);
-	}
-	
-	public MonCompte cliquerlogin() {
 		bouton_login.click();
-		return new MonCompte (driver);
+		
+		return PageFactory.initElements(driver, MonCompte.class);
+		
+		
 	}
+
+
+	
+	
 }

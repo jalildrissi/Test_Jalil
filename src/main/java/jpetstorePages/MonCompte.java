@@ -1,6 +1,7 @@
 package jpetstorePages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.*;
 
 public class MonCompte {
@@ -22,6 +23,6 @@ public class MonCompte {
 	public PageAccueil quitterCompte (	WebDriver driver) {
 		driver.findElement(quitterMonCompte).click();
 		
-		return new PageAccueil (driver);	
+		return 	PageFactory.initElements(driver, PageAccueil.class);
 	}
 }

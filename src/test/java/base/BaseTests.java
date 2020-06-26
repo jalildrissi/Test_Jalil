@@ -21,7 +21,7 @@ public class BaseTests {
 		driver.get("https://jpetstore.cfapps.io/catalog");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-		pageAccueil = new PageAccueil (driver);
+		pageAccueil = new PageAccueil ();
 		
 	}
 
