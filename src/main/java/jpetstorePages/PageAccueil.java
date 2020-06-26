@@ -23,9 +23,12 @@ public class PageAccueil {
 	}
 	
 	public String getTextBienvenue () {
-		String texte;
-		texte = textBienvenue.getText();
-		return texte;
+		
+		String textAccueilBienvenue;
+		
+		textAccueilBienvenue = textBienvenue.getText();
+		
+		return textAccueilBienvenue;
 	}
 	
 	/* TO DO

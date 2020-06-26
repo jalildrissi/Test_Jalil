@@ -29,9 +29,9 @@ public class ConnexionTests extends BaseTests {
 		
 		pageAccueil = loginPage.logIn(driver, "j2ee", "j2ee");
 		
-		 text = pageAccueil.getTextBienvenue(); 
+		text = pageAccueil.getTextBienvenue();
 		 
-		assertEquals("Erreur dans le texte", "Welcome ABC !", text);
+		assertEquals("Erreur dans le texte de bienvenue de la page d'accueil", "Welcome ABC !", text);
 		
 		System.out.println(text);
 		
