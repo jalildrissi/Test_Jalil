@@ -20,7 +20,7 @@ public class LoginPage {
 	//WebElement champ_password = driver.findElement(By.xpath("//input[@name='username']"));
 	//WebElement bouton_login = driver.findElement(By.xpath("//input[@id='login']"));
 	
-	public MonCompte logIn (WebDriver driver, String username, String password) {
+	public PageAccueil logIn (WebDriver driver, String username, String password) {
 		
 		champ_username.clear();
 		champ_username.sendKeys(username);
@@ -28,7 +28,7 @@ public class LoginPage {
 		champ_password.sendKeys(password);
 		bouton_login.click();
 		
-		return PageFactory.initElements(driver, MonCompte.class);
+		return PageFactory.initElements(driver, PageAccueil.class);
 		
 		
 	}

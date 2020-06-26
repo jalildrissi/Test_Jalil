@@ -16,11 +16,12 @@ public class BaseTests {
 	@Before
 	
 	public void SetUp () {
-		System.setProperty("webdriver.chrome.driver" , "C:\\dev\\webdrivers\\chrome\\81\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver" , "C:\\dev\\webdrivers\\chrome\\83\\chromedriver.exe");
 		driver = new ChromeDriver ();
 		driver.get("https://jpetstore.cfapps.io/catalog");
-		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		
 		pageAccueil = new PageAccueil ();
 		
 	}
