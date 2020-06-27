@@ -1,30 +1,32 @@
 package jpetstorePages;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.*;
 
 public class MonComptePage {
-	WebDriver driver;
+	
+	
+	
+	@FindBy(xpath = "//a[contains(text(),'Sign Out')]")
+	public WebElement btn_quitter_mon_compte;
+	
+	@FindBy(xpath = "//a[contains(text(),'My Account')]")
+	public WebElement btn_mon_compte;
 
-	public MonComptePage (WebDriver driver) {
-		this.driver = driver;
-	}
-	String textBienvenue;
-	private By  bienvenue = By.xpath("//div[@id='WelcomeContent']//div[1]");
-	private By quitterMonCompte = By.xpath("//a[contains(text(),'Sign Out')]");
-	
-	
-	public String getTextBienvenu () {
-		textBienvenue = driver.findElement(bienvenue).getText();
-		return textBienvenue;
+	public InscriptionPage modifier_info_de_mon_compte(WebDriver driver) {
+		btn_mon_compte.click();
+		return PageFactory.initElements(driver, InscriptionPage.class);
 	}
 	
-	//TODO
-	
-	public PageAccueil quitterCompte (	WebDriver driver) {
-		driver.findElement(quitterMonCompte).click();
+	public PageAccueil quitter_mon_compte (WebDriver driver) {
+
+		btn_quitter_mon_compte.click();
+
+		return PageFactory.initElements(driver, PageAccueil.class);
 		
-		return 	PageFactory.initElements(driver, PageAccueil.class);
 	}
+
 }
+	

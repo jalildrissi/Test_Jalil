@@ -6,34 +6,26 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PageAccueil {
-	
-	//WebDriver driver;
+
+	// WebDriver driver;
 	// private By login = By.xpath("//a[contains(text(),'Sign In')]");
-	
+
 	@FindBy(xpath = "//a[contains(text(),'Sign In')]")
 	public WebElement btn_login;
 
-	
-	@FindBy(xpath = "//div[@id='WelcomeContent']//div[1]")
+	@FindBy(xpath = "//div[@id='WelcomeContent']")
 	public WebElement textBienvenue;
 
-	public LoginPage clickLogin (WebDriver driver) {
+	public LoginPage clickLogin(WebDriver driver) {
 		btn_login.click();
 		return PageFactory.initElements(driver, LoginPage.class);
 	}
-	
-	public String getTextBienvenue () {
-		
+
+	public String getTextBienvenue() {
 		String textAccueilBienvenue;
-		
 		textAccueilBienvenue = textBienvenue.getText();
-		
 		return textAccueilBienvenue;
 	}
+
 	
-	/* TO DO
-	public void clickElement (WebElement element) {
-		
-	}
-*/
 }

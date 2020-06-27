@@ -16,9 +16,15 @@ public class BaseTests {
 	@Before
 	
 	public void SetUp () {
-		System.setProperty("webdriver.chrome.driver" , "C:\\dev\\webdrivers\\chrome\\83\\chromedriver.exe");
+		System.out.println("Début  du test ");
+		
+		System.setProperty("webdriver.chrome.driver" , "D:\\Drivers\\Chrome\\83\\chromedriver.exe");
+		
 		driver = new ChromeDriver ();
-		driver.get("https://jpetstore.cfapps.io/catalog");
+		
+		System.out.println("Ouvrir la page du site jpetsore ");
+		
+		driver.get("https://petstore.octoperf.com/actions/Catalog.action");
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		
@@ -29,5 +35,6 @@ public class BaseTests {
 	@After
 	public void theardown( ) {
 		driver.quit();
+		System.out.println("Fin du test ");
 	}
 }
