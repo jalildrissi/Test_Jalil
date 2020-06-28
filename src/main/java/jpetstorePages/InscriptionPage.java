@@ -2,6 +2,7 @@ package jpetstorePages;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.*;
 
 public class InscriptionPage {
@@ -57,7 +58,14 @@ public class InscriptionPage {
 	
 	@FindBy(xpath = "//input[@name='newAccount']")
 	public WebElement enregistrer_info_compte;
+	
+	@FindBy(name =  "account.languagePreference")
+	public WebElement liste_deroulante_choix_langue;
+	
+	@FindBy(name =  "account.favouriteCategoryId")
+	public WebElement liste_favouriteCategoryId;
 
+	
 	////Saisir les informations de l'utilisateur (Id, password )
 	public void  saisir_info_user(WebDriver driver, String username, String password) {
 
@@ -110,18 +118,21 @@ public class InscriptionPage {
 		
 		return PageFactory.initElements(driver, PageAccueil.class);
 	}
-
-
 	
-	
-
-	
-	//TODO
-	/*
-	public PageAccueil quitterCompte (	WebDriver driver) {
-		driver.findElement(quitterMonCompte).click();
-		
-		return 	PageFactory.initElements(driver, PageAccueil.class);
+	// Choisi une langue 
+	public void choisir_langue (String langue) {
+		Select choix_langue = new Select(liste_deroulante_choix_langue) ;
+		choix_langue.getOptions();
+		choix_langue.selectByVisibleText(langue);
 	}
-	*/
+	
+	// Choisi une categorie
+	public void choisir_categorie_favorite (String categorie) {
+		Select choix_categorie = new Select(liste_favouriteCategoryId) ;
+		choix_categorie.getOptions();
+		choix_categorie.selectByVisibleText(categorie);
+	}
+
+	
+	
 }

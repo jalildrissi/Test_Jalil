@@ -21,11 +21,11 @@ public class BaseTests {
 		System.setProperty("webdriver.chrome.driver" , "D:\\Drivers\\Chrome\\83\\chromedriver.exe");
 		
 		driver = new ChromeDriver ();
-		
-		System.out.println("Ouvrir la page du site jpetsore ");
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		System.out.println("Ouvrir la page d'accueil du site jpetsore ");
 		
 		driver.get("https://petstore.octoperf.com/actions/Catalog.action");
-		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+		
 		driver.manage().window().maximize();
 		
 		pageAccueil = new PageAccueil ();
