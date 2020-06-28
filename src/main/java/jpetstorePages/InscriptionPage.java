@@ -104,11 +104,11 @@ public class InscriptionPage {
 	
 	// Enregistrer les information du compte et aller vers la page MonCompte 
 
-	public MonComptePage cliquer_enregistrer_info_compte (WebDriver driver) {
+	public PageAccueil cliquer_enregistrer_info_compte (WebDriver driver) {
 		
 		enregistrer_info_compte.click();
 		
-		return PageFactory.initElements(driver, MonComptePage.class);
+		return PageFactory.initElements(driver, PageAccueil.class);
 	}
 
 

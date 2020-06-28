@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.BaseTests;
 import jpetstorePages.LoginPage;
+import jpetstorePages.MonComptePage;
 //import jpetstorePages.MonComptePage;
 import jpetstorePages.PageAccueil;
 
@@ -32,9 +33,9 @@ public class ConnexionTests extends BaseTests {
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		
 		System.out.println("Entrer le nom d'utilisateur et le mot de passe"); 
-		pageAccueil = loginPage.logIn(driver, "j2ee", "j2ee");
+		MonComptePage monCompte = loginPage.cliquer_login(driver, "j2ee", "j2ee");
 		
-		text = pageAccueil.getTextBienvenue();
+		text = monCompte.getTextBienvenue();
 		
 		System.out.println("Vérifier le contenu du text d'accueil");
 		

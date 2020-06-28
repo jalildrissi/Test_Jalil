@@ -10,22 +10,14 @@ public class PageAccueil {
 	// WebDriver driver;
 	// private By login = By.xpath("//a[contains(text(),'Sign In')]");
 
-	@FindBy(xpath = "//a[contains(text(),'Sign In')]")
+	@FindBy(linkText  = "Sign In")
 	public WebElement btn_login;
 
-	@FindBy(xpath = "//div[@id='WelcomeContent']")
-	public WebElement textBienvenue;
+	
 
 	public LoginPage clickLogin(WebDriver driver) {
 		btn_login.click();
 		return PageFactory.initElements(driver, LoginPage.class);
 	}
-
-	public String getTextBienvenue() {
-		String textAccueilBienvenue;
-		textAccueilBienvenue = textBienvenue.getText();
-		return textAccueilBienvenue;
-	}
-
 	
 }

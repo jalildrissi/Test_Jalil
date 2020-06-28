@@ -25,7 +25,7 @@ public class LoginPage {
 	// WebElement bouton_login =
 	// driver.findElement(By.xpath("//input[@id='login']"));
 
-	public PageAccueil logIn(WebDriver driver, String username, String password) {
+	public MonComptePage cliquer_login(WebDriver driver, String username, String password) {
 
 		champ_username.clear();
 		champ_username.sendKeys(username);
@@ -33,10 +33,15 @@ public class LoginPage {
 		champ_password.sendKeys(password);
 		bouton_login.click();
 
-		return PageFactory.initElements(driver, PageAccueil.class);
+		return PageFactory.initElements(driver, MonComptePage.class);
 
 	}
-
+/*
+	public MonComptePage se_connecter_mon_compte (WebDriver driver, String username, String password ) {
+		
+	}
+	*/
+	
 	public InscriptionPage click_register_now(WebDriver driver) {
 		Register_Now.click();
 		return PageFactory.initElements(driver, InscriptionPage.class);
