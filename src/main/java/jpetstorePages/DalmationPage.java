@@ -33,12 +33,15 @@ public class DalmationPage {
 		String description = Spotless_Male_Puppy_Description.getText();
 		return description;
 	}
-	
+	//recuperer le prix du chien
 	public String getPrice_spotless_male () {
+		
 		String price = Spotless_Male_Puppy_Price.getText();
+		
 		return price;
 	}
 	
+	//Ajouter le chien male dans le panier et aller sur la page de shopping
 	public Shopping_Cart_Page click_Add_spotless_male (WebDriver driver) {
 		
 		Spotless_Male_Puppy_Btn_Add.click();
@@ -46,7 +49,7 @@ public class DalmationPage {
 		return PageFactory.initElements(driver, Shopping_Cart_Page.class);
 		
 	}
-	
+	//Cliquer sur le lien pour aller sur la page du chien
 	public Spotless_Male_Puppy_Dalmation_Page cliquer_lien_spotless_male (WebDriver driver) {
 		
 		Spotless_Male_Puppy_lien.click();
