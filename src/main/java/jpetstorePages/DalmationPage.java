@@ -33,6 +33,7 @@ public class DalmationPage {
 		String description = Spotless_Male_Puppy_Description.getText();
 		return description;
 	}
+	
 	//recuperer le prix du chien
 	public String getPrice_spotless_male () {
 		

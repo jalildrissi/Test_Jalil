@@ -22,7 +22,6 @@ public class Shopping_Cart_Page {
 		
 		input_quantity.clear();
 		input_quantity.sendKeys(quantite);
-		
 	}
 	
 	public void update_Cart_Quantities () {
