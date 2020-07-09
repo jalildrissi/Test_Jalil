@@ -12,6 +12,9 @@ public class PageAccueil {
 
 	@FindBy(linkText  = "Sign In")
 	public WebElement btn_login;
+	
+	@FindBy(xpath = "//a[2]/img[1]")
+	public WebElement dogs_lien;
 
 	
 
@@ -19,5 +22,11 @@ public class PageAccueil {
 		btn_login.click();
 		return PageFactory.initElements(driver, LoginPage.class);
 	}
+	
+	public DogsnPage click_Dogs_lien(WebDriver driver) {
+		dogs_lien.click();
+		return PageFactory.initElements(driver, DogsnPage.class);
+	}
+	
 	
 }

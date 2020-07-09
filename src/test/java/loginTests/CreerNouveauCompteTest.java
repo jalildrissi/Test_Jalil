@@ -27,10 +27,10 @@ public class CreerNouveauCompteTest extends BaseTests {
 	InscriptionPage inscription = loginPage.click_register_now(driver);
 	
 	System.out.println("Saisir les info user");
-	inscription.saisir_info_user(driver, "jalil", "123456");
+	inscription.saisir_info_user(driver, "jalil22", "123456");
 	
 	System.out.println("Saisir les info du compte");
-	inscription.saisir_information_compte(driver, "jalil", "dodo", "testdodo@gmail.com", "0021265852");
+	inscription.saisir_information_compte(driver, "jalil22", "dodo", "testdodo@gmail.com", "0021265852");
 	
 	System.out.println("Saisir les info adresse");
 	inscription.saisir_adresse(driver, "abscd", "23", "clamart", "haut de seine", "92140", "France");
@@ -45,13 +45,13 @@ public class CreerNouveauCompteTest extends BaseTests {
 	pageAccueil.clickLogin(driver);
 	
 	System.out.println("Se connecter au nouveau compte");
-	MonComptePage moncompte =loginPage.cliquer_login(driver, "jalil", "123456");
+	MonComptePage moncompte =loginPage.cliquer_login(driver, "jalil22", "123456");
 	
 	String texte = moncompte.getTextBienvenue();
 	
 	System.out.println(texte);
 	
-	assertEquals("Erreur dans le texte de bienvenue de la page d'accueil", "Welcome jalil!", texte);
+	assertEquals("Erreur dans le texte de bienvenue de la page d'accueil", "Welcome jalil22!", texte);
 	
 	moncompte.quitter_mon_compte(driver);
 	
